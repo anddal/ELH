@@ -1,0 +1,25 @@
+#page-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1.5;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; /* These positions makes sure that the overlay */
+    bottom: 0; /* will cover the entire parent */
+    left: 0;
+    width: 100%;
+    background: #99CCFF;
+    opacity: 0.20;
+    -moz-opacity: 0.20; /* older Gecko-based browsers */
+    filter: alpha(opacity=20); /* For IE6&7 */
+}
+
+
+

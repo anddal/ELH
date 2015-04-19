@@ -1,0 +1,37 @@
+<div class="container registerEventContent ">
+
+    <form novalidate class="simple-form" name="registerEventForm">
+        <div class="panel event-picker-panel">
+            <div class="panel-heading">
+                <h4 class="panel-title">Select Event Type
+                </h4>
+            </div>
+            <div id="myDropdown"></div>
+        </div>
+
+        <div class="panel" id="inspectionExpand">
+            <div class="panel-heading">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-edit"></span> Add Comment </h4>
+            </div>
+            <div class="panel-body">
+
+                <textarea
+                        class="form-control"
+                        rows="4"
+                        ng-model="eventCommentArea"
+                        ng-required="inspectionSelectedCheck()">
+                </textarea>
+            </div>
+        </div>
+        <button id="confirmationButton" class="btn btn-lg btn-block submitBtn" ng-click="sendPost()">
+            Submit
+        </button>
+
+        <button class="btn btn-lg btn-block cancel-btn" ng-click="back()">
+            <span class="glyphicon glyphicon-remove"></span>
+            Cancel
+        </button>
+    </form>
+</div>
+
+

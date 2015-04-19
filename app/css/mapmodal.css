@@ -1,0 +1,17 @@
+#map_canvas {
+    height: 40vh;
+    width: 100%;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+.modal-dialog {
+    margin-top: 60px;
+    height: 90%;
+}
+
+.modal-footer > button {
+    background-color: rgba(92, 151, 191, 1);
+}

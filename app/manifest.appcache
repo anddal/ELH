@@ -1,0 +1,68 @@
+CACHE MANIFEST
+
+# Version 1.1
+
+CACHE:
+# INDEX
+index.html
+
+# PARTIALS
+/app/partials/ccusearch.html
+/app/partials/contactinfo.html
+/app/partials/registerevent.html
+/app/partials/sidemenu.html
+/app/partials/error.html
+/app/partials/journey.html
+
+# CSS FILES
+/app/css/ccuinfo.css
+/app/css/ccusearch.css
+/app/css/contact.css
+/app/css/globalstyling.css
+/app/css/header.css
+/app/css/loadergif.css
+/app/css/mapmodal.css
+/app/css/registerevent.css
+/app/css/toaster.css
+/app/css/typography.css
+
+# JS FILES
+/app/js/app.js
+/app/js/controllers.js
+/app/js/directives.js
+/app/js/filters.js
+/app/js/services.js
+
+# IMAGES
+/app/img/apple-touch-icon.png
+/app/img/epim-logistics-hub-landscape.png
+/app/img/epim-logistics-hub-original.png
+/app/img/epim-logisticshub.png
+/app/img/ajax-loader.gif
+/app/img/404image.jpg
+/app/img/elhfavicontransparent.ico
+/app/img/events/Arriving.png
+/app/img/events/default.png
+/app/img/events/Departing.png
+/app/img/events/Inspecting.png
+/app/img/events/Internal_Moving.png
+/app/img/events/Loading.png
+/app/img/events/Packing.png
+/app/img/events/Unloading.png
+
+/app/img/getSymbols/get-ccu-white.png
+/app/img/getSymbols/get-document-white.png
+/app/img/getSymbols/get-inspection-white.png
+/app/img/getSymbols/get-journey-white.png
+/app/img/getSymbols/get-leg-white.png
+/app/img/getSymbols/get-organisation-white.png
+/app/img/getSymbols/get-reading-white.png
+/app/img/getSymbols/GetJourney.png
+/app/img/getSymbols/GetLeg.png
+
+NETWORK:
+*
+
+FALLBACK:
+/ /app/partials/nointernet.html
+

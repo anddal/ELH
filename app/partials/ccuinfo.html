@@ -1,0 +1,289 @@
+<div class="container ccuInfoContent">
+<toaster-container toaster-options="{'position-class': 'toast-top-full-width'}"></toaster-container>
+
+<div ng-show="checkExpiracy()" class="panel panel-danger certificate-expiracy-warning">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            Expired certificate(s)!
+        </h4>
+    </div>
+    <div class="panel-body">
+        <p>A certificate has expired</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-6 ccuinfo-btn-container">
+        <button type="button" ng-click="addToFavorites()" class="btn btn-primary btn-lg btn-block ccu-info-btns">
+            <span class="{{favoritsBtnText | watch}} watch-icon"></span>
+
+            {{favoritsBtnText | watchBtnText}}
+
+        </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-6 ccuinfo-btn-container">
+        <a type="button" class="btn btn-primary btn-lg btn-block ccu-info-btns"
+           href="#/ccu/{{ccu.ccuId}}/registerevent">
+            <img class="add-event-icon"
+                 ng-src="{{GetPostImgUrl('getinspectionwhite')}}"
+                 alt="getjourneywhite"/>
+            Add Event
+        </a>
+    </div>
+</div>
+
+<div class="panel-group ccuInfoTabs" id="accordion">
+
+<div class="panel panel-default">
+    <div class="panel-heading"
+         ng-click="setActiveTab('eventhistory')"
+         ng-class="{activeTab: openTab == 'eventhistory'}"
+         data-toggle="collapse"
+         data-parent="#accordion"
+         href="/ccu/{{ccu.ccuId}}/#eventHistoryTab">
+        <h4 class="panel-title">
+            <img class="tabImage"
+                 ng-src="{{GetPostImgUrl('getinspectionwhite')}}"
+                 alt="getjourneywhite"/>
+            Event history
+                    <span ng-class="{'glyphicon glyphicon-chevron-left pointer-arrow':openTab == 'eventhistory','glyphicon glyphicon-chevron-down pointer-arrow':openTab != 'eventhistory'} "
+                          ng-model="collapsed"></span>
+        </h4>
+    </div>
+    <div id="eventHistoryTab" class="panel-collapse collapse in">
+        <div class="panel-body">
+
+            <div class="panel-group event-history" id="event-history-accordion">
+
+                <div class="panel panel-default" ng-repeat="event in events | orderBy:orderProp">
+                    <div class="panel-heading event-heading"
+                         data-toggle="collapse"
+                         data-parent="#event-history-accordion"
+                         href="/ccu/{{ccu.ccuId}}/#{{event.eventId}}"
+                         ng-click="setActiveEvent(event.eventId)"
+                         ng-class="{activeEvent: openEvent == event.eventId}">
+                        <div class="eventImgContainer">
+                            <img class="eventTypeImg {{event.eventType.toLowerCase() + 'Img'}}"
+                                 ng-src="{{getEventTypeImageUrl(event.eventType)}}"
+                                 alt="{{event.eventType}}"/>
+                        </div>
+                        <h4 class="panel-title {{event.eventType.toLowerCase() + 'Img'}}">
+                            {{event.eventType}}
+                        </h4>
+                        <span class="event-time">{{event.timestamp | convertEventDate}}</span>
+                    </div>
+
+                    <div id="{{event.eventId}}" class="panel-collapse collapse">
+                        <div class="panel-body event-body">
+                            <p class="elementDescription">Event id:
+                                <span class="elementValue">{{event.eventId}}</span>
+                            </p>
+
+                            <p class="elementDescription">ccu id:
+                                <span class="elementValue">{{event.ccuId}}</span>
+                            </p>
+
+                            <p class="elementDescription">location:
+                                <span class="elementValue">{{event.eventLocation}}</span>
+                            </p>
+
+                            <p class="elementDescription readpoint">
+                                readpoint:
+                                        <span class="elementValue">
+                                            <button data-toggle="modal"
+                                                    data-target="#myModal"
+                                                    ng-click="sendLatLng(event.eventReadPoint)">
+                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                Show on map
+                                            </button>
+                                        </span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"
+         ng-click="setActiveTab('journey')"
+         ng-class="{activeTab: openTab == 'journey'}"
+         data-toggle="collapse"
+         data-parent="#accordion"
+         href="/ccu/{{ccu.ccuId}}/#journeyTab">
+        <h4 class="panel-title">
+            <img class="tabImage"
+                 ng-src="{{GetPostImgUrl('getjourneywhite')}}"
+                 alt="getjourneywhite"/> Journey
+                     <span ng-class="{'glyphicon glyphicon-chevron-left pointer-arrow':openTab == 'journey','glyphicon glyphicon-chevron-down pointer-arrow':openTab != 'journey'} "
+                           ng-model="collapsed"></span>
+        </h4>
+
+    </div>
+    <div id="journeyTab" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="elementGroup">
+                <p class="elementDescription">Hirer: <span
+                        class="elementValue">{{journey.hireName}}</span>
+                </p>
+
+                <p class="elementDescription">Origin: <span
+                        class="elementValue"> {{journey.originGln}}</span>
+                </p>
+
+                <p class="elementDescription">ETA:<span
+                        class="elementValue">{{journey.eta | convertCertDate}} </span>
+                </p>
+            </div>
+
+            <div class="panel-group legs" id="legs-accordion">
+
+                <div class="panel panel-default" ng-repeat="leg in journey.legs | orderBy:-leg.etd">
+                    <div class="panel-heading event-heading" data-toggle="collapse"
+                         data-parent="#legs-accordion">
+                        <div class="eventImgContainer">
+                            <img class="eventTypeImg"
+                                 ng-src="{{GetPostImgUrl('GetLeg')}}" alt="{{GetLeg}}"/>
+                        </div>
+                        <h4 class="panel-title {{leg.transportOrgName | determineLineBreak}}">
+                            {{leg.transportOrgName}}
+                        </h4>
+                                <span class="leg-time">
+                                    <div class="leg-eta" ng-class="{legEtaOnly: !leg.ata}">ETA: {{leg.eta |
+                                        convertCertDate}}
+                                    </div>
+                                    <div class="leg-ata" ng-hide="!leg.ata">ATA: {{leg.ata | convertCertDate}}</div>
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"
+         ng-click="setActiveTab('ccuinfo')"
+         ng-class="{activeTab: openTab == 'ccuinfo'}"
+         data-toggle="collapse"
+         data-parent="#accordion"
+         href="/ccu/{{ccu.ccuId}}/#ccuInfoTab">
+        <h4 class="panel-title">
+            <img class="tabImage"
+                 ng-src="{{GetPostImgUrl('getccuwhite')}}" alt="getjourneywhite"/>
+            CCU info
+                   <span ng-class="{'glyphicon glyphicon-chevron-left pointer-arrow':openTab == 'ccuinfo','glyphicon glyphicon-chevron-down pointer-arrow':openTab != 'ccuinfo'} "
+                         ng-model="collapsed"></span>
+        </h4>
+    </div>
+    <div id="ccuInfoTab" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="elementGroup">
+                <p class="elementDescription">Ccu Class:
+                    <span class="elementValue">{{ccu.ccuClass}}</span>
+                </p>
+
+                <p class="elementDescription">Ccu Subclass:
+                    <span class="elementValue">{{ccu.ccuSubClass}}</span>
+                </p>
+            </div>
+            <div class="elementGroup">
+                <p class="elementDescription">Payload:
+                    <span class="elementValue">{{ccu.payload}} kg</span>
+                </p>
+
+                <p class="elementDescription">Tare Weight:
+                    <span class="elementValue">{{ccu.tareWeight}} kg</span>
+                </p>
+
+                <p class="elementDescription">Max Gross Weight:
+                    <span class="elementValue">{{ccu.maxGrossWeight}} kg</span>
+                </p>
+            </div>
+            <div class="elementGroup">
+                <p class="elementDescription">Length: <span class="elementValue">{{ccu.length}} m</span></p>
+
+                <p class="elementDescription">Width: <span class="elementValue">{{ccu.width}} m</span></p>
+
+                <p class="elementDescription">Height: <span class="elementValue">{{ccu.height}} m</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"
+         ng-click="setActiveTab('owner')"
+         ng-class="{activeTab: openTab == 'owner'}"
+         data-toggle="collapse"
+         data-parent="#accordion"
+         href="/ccu/{{ccu.ccuId}}/#ownerTab">
+        <h4 class="panel-title">
+            <img class="tabImage"
+                 ng-src="{{GetPostImgUrl('getorganizationwhite')}}" alt="getjourneywhite"/>
+            Owner
+                     <span ng-class="{'glyphicon glyphicon-chevron-left pointer-arrow':openTab == 'owner','glyphicon glyphicon-chevron-down pointer-arrow':openTab != 'owner'} "
+                           ng-model="collapsed"></span>
+        </h4>
+
+    </div>
+    <div id="ownerTab" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="elementGroup">
+                <p class="elementDescription">OrgName: <span class="elementValue">{{ccu.orgName}}</span></p>
+
+                <p class="elementDescription">GLN: <span class="elementValue">{{ccu.gln}}</span></p>
+
+                <p class="elementDescription">Owner Ccu Id: <span class="elementValue">{{ccu.ccuOwnerId}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading" ng-click="setActiveTab('certificates')"
+         ng-class="{activeTab: openTab == 'certificates'}" data-toggle="collapse" data-parent="#accordion"
+         href="/ccu/{{ccu.ccuId}}/#certificatesTab">
+        <h4 class="panel-title">
+            <img class="tabImage"
+                 ng-src="{{GetPostImgUrl('getdocumentwhite')}}" alt="getjourneywhite"/>
+            Certificates
+                            <span ng-class="{'glyphicon glyphicon-chevron-left pointer-arrow':openTab == 'certificates','glyphicon glyphicon-chevron-down pointer-arrow':openTab != 'certificates'} "
+                                  ng-model="collapsed"></span>
+        </h4>
+    </div>
+    <div id="certificatesTab" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="elementGroup">
+                <p class="elementDescription">R002 Compliance: <span
+                        class="elementValue {{ccu.r002Compliance | checkmark}} {{ccu.r002Compliance | classBasedOnExpiry}}"></span>
+                </p>
+            </div>
+            <div class="elementGroup">
+                <p class="elementDescription">Certificate Number: <span class="elementValue">{{ccu.certificate.certificateNumber}}</span>
+                </p>
+
+                <p class="elementDescription">Expiry date: <span
+                        class="elementValue {{ccu.certificate.expiryDate | classBasedOnExpiry}}">{{ccu.certificate.expiryDate | convertCertDate}}</span>
+                </p>
+            </div>
+            <div class="elementGroup">
+                <p class="elementDescription">IMO Certificate Number: <span class="elementValue">{{ccu.imoCertificate.certificateNumber}}</span>
+                </p>
+
+                <p class="elementDescription">Expiry date: <span
+                        class="elementValue {{ccu.imoCertificate.expiryDate | classBasedOnExpiry}}">{{ccu.imoCertificate.expiryDate | convertCertDate}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>

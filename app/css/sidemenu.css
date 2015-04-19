@@ -1,0 +1,72 @@
+.sidemenu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+
+    background-color: rgba(56, 109, 157, 1);
+}
+
+.sidemenu-header {
+    position: fixed;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: rgba(92, 151, 191, 1);
+}
+
+.sidemenu-content {
+    position: relative;
+    margin-top: 50px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.epim-logo {
+    height: 40px;
+    width: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: block;
+    z-index: 5;
+}
+
+.sidemenu-content > a {
+    position: relative;
+    display: block;
+    background-color: rgba(92, 151, 191, 1);
+    border-bottom: 1px solid rgba(56, 109, 157, 1);
+    border-top: 1px solid rgba(56, 109, 157, 1);
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.sidemenu-content > a .event-notifier {
+    display: inline-block;
+    float: right;
+    margin: 11px 0;
+    height: 20px;
+    width: 30px;
+    line-height: 20px;
+    border-radius: 10px;
+    background-color: rgba(56, 109, 157, 1);
+}
+
+.sidemenu-content a:hover {
+    background-color: rgb(135, 195, 235);
+}
+
+.sidemenu-content > a > div {
+    line-height: 40px;
+    top: 0;
+    padding-right: 15px;
+}
+
+.sidemenu-content > h5 {
+    margin-top: 20px;
+    padding: 0 10px;
+}

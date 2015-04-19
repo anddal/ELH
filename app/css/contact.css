@@ -1,0 +1,14 @@
+.contactContent{
+    margin-top: 70px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.contactImg{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.contactContent address > p{
+    margin-bottom: 1px;
+}

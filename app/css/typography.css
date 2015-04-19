@@ -1,0 +1,83 @@
+/* Global */
+
+body, .sidemenu-content > h5, .ccuInfoContent, .dd-container {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* Header and sidemenu */
+
+.sidemenu-content > a {
+    color: #fcfcfc;
+    text-decoration: none;
+}
+
+.sidemenu-content > h5 {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(200, 200, 204);
+}
+
+.sidemenu-content > a .event-notifier {
+    text-align: center;
+    color: #fcfcfc;
+    font-weight: 400;
+}
+
+.fixed-header > h3 {
+    color: #fcfcfc;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* CCU INFO PAGE */
+
+.panel-body p {
+    font-size: 14px;
+}
+
+.elementDescription {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.elementDescription > .elementValue {
+    font-weight: 300;
+    text-transform: none;
+}
+
+.panel-title {
+    text-align: center;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #fcfcfc;
+}
+
+.btn {
+    font-weight: 300;
+}
+
+.certificate-expiracy-warning .panel-title {
+    text-transform: none;
+}
+
+.elementDescription > .elementValue.valid-certificate {
+    color: green;
+}
+
+.elementDescription > .elementValue.expired-certificate {
+    color: red;
+}
+
+.certificate-expiracy-warning .panel-body > p {
+    text-align: center;
+}
+
+.dd-option-text, .dd-selected-text {
+    font-weight: 600;
+}
+
+.dd-selected-text, .dd-option-text {
+    color: #58585a;
+}

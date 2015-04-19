@@ -1,0 +1,30 @@
+<nav prevent-instant-escape class="sidemenu">
+    <div class="sidemenu-header">
+        <img class="epim-logo" src="img/epim-logistics-hub-original.png" alt="EPIM Logo"/>
+    </div>
+    <div class="sidemenu-content">
+        <h5>Menu</h5>
+        <a sidemenu-toggle href="#/search">
+            <div class="glyphicon glyphicon-search"></div>
+            Search CCU Id
+        </a>
+
+        <a sidemenu-toggle href="#/contact">
+            <div class="glyphicon glyphicon-phone-alt"></div>
+            Contact
+        </a>
+
+        <h5 ng-hide="!unCheckedEventList.length">Watchlist</h5>
+
+        <a sidemenu-toggle ng-repeat="fl in unCheckedEventList | orderBy:'-timestamp'" href="#/ccu/{{fl.ccuId}}">
+            <div class="glyphicon glyphicon-chevron-right"></div>
+            CCU {{fl.ccuId}}
+            <p ng-if="fl.unchecked > 0" class="event-notifier">{{fl.unchecked}}</p>
+        </a>
+        <h5 ng-hide="!sessionList.length">Last CCUs</h5>
+        <a sidemenu-toggle ng-repeat="sl in sessionList | orderBy:'-timestamp'" href="#/ccu/{{sl.ccuId}}">
+            <div class="glyphicon glyphicon-chevron-right"></div>
+            CCU {{sl.ccuId}}
+        </a>
+    </div>
+</nav>

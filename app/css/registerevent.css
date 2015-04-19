@@ -1,0 +1,119 @@
+#inspectionExpand > .panel-heading,
+.registerEventContent .panel-heading {
+    background-color: rgba(92, 151, 191, 1);
+}
+
+.registerEventContent .panel:not(.event-picker-panel) {
+    border: 1px solid rgba(92, 151, 191, 1);
+}
+
+.registerEventContent .alert.alert-success {
+    margin-top: 10px;
+}
+
+.registerEventContent {
+    margin-top: 70px;
+}
+
+.selectEventPanelBody {
+    padding: 2%;
+    padding-left: 0;
+}
+
+.eventImgContainer.selectImg {
+    width: 20px;
+    height: 15px;
+    margin-left: 0;
+    margin-top: 3%;
+}
+
+.dd-selected .dd-selected-image, .dd-option .dd-option-image {
+    width: 40px;
+    height: 30px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+.dd-container .dd-select {
+    border-radius: 0;
+    background: none;
+    border: 1px solid rgba(92, 151, 191, 1);
+}
+
+.dd-container .dd-options {
+    border: 1px solid rgba(92, 151, 191, 1);
+    border-top: none;
+}
+
+.dd-selected-text, .dd-option-text {
+    line-height: 30px !important;
+}
+
+.dd-selected-text {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.dd-option-text {
+    font-weight: 400;
+}
+
+.dd-options.dd-click-off-close {
+    width: 100%;
+}
+
+.dd-pointer.dd-pointer-down {
+    border: none;
+}
+
+.dd-pointer.dd-pointer-up {
+    border: none !important;
+}
+
+.dd-option-description.dd-desc,
+.dd-selected-description.dd-desc,
+.dd-option.dd-option-selected {
+    display: none;
+}
+
+.dd-select .dd-selected,
+.dd-options .dd-option {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.dd-option-image.arriving,
+.dd-selected-image.arriving {
+    margin-left: -14px;
+    width: 54px;
+}
+
+.dd-option-image.departing,
+.dd-selected-image.departing {
+    width: 54px;
+    margin-right: 6px;
+}
+
+/* Dropdown arrow */
+
+.dd-pointer.dd-pointer-down {
+    margin-top: -7px;
+    width: auto;
+}
+
+.dd-pointer.dd-pointer-down.dd-pointer-up {
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-top: -3px;
+    right: 5px;
+
+}
+
+.cancel-btn {
+    background-color: rgba(200, 200, 204, .8);
+}
+
+.cancel-btn > span {
+    color: #ffffff;
+}

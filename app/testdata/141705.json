@@ -1,0 +1,30 @@
+{
+    "ccuId": 141705,
+    "orgNo": 123456789,
+    "gln": 1234567890123,
+    "ccuClass": "Basket",
+    "ccuSubClass": "Half High Basket",
+    "ccuOwnerId": 133428,
+    "payload": 4300,
+    "tareWeight": 1700,
+    "maxGrossWeight": 6000,
+    "length": 4,
+    "width": 4,
+    "height": 2.8,
+
+    "r002Compliance": true,
+    "certificate": {
+        "certificateNumber": 133609,
+        "expiryDate": "2015-05-30T09:30:10Z"
+    },
+    "imoCertificate": {
+        "certificateNumber": 133643,
+        "expiryDate": "2002-05-30T09:30:10Z"
+    },
+    "link": {
+        "href": "events.json",
+        "method": "get",
+        "rel": "Events",
+        "type":"application/pdf"
+    }
+}

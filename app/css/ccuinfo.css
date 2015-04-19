@@ -1,0 +1,267 @@
+
+.ccuInfoTabs .panel-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.ccuInfoContent {
+    margin-top: 70px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ccuInfoContent .panel-default,
+.ccuInfoContent > .ccuInfoTabs .panel-body,
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: none;
+    border-top: none;
+}
+
+.ccu-info-btns:focus,
+.ccu-info-btns:active:focus,
+.ccu-info-btns.active:focus {
+    background-color: rgba(92, 151, 191, 1);
+    outline: none;
+}
+
+.ccu-info-btns:active {
+    background-color: rgba(56, 109, 157, 1);
+}
+
+.elementGroup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(200, 200, 204);
+}
+
+.elementGroup:last-child {
+    border-bottom: 0 solid lightgray;
+}
+
+.elementDescription {
+    margin: 7px 0;
+}
+
+.elementDescription > .elementValue {
+    float: right;
+}
+
+.ccuInfoContent .panel-heading {
+    cursor: pointer;
+}
+
+.panel-default > .panel-heading {
+    background-color: rgba(92, 151, 191, 1);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid rgb(56, 109, 157);
+}
+
+.ccu-info-btns {
+    margin-bottom: 5px;
+    background-color: rgba(92, 151, 191, 1);
+    border: 1px solid rgb(56, 109, 157);
+}
+
+.ccuinfo-btn-container .watch-icon {
+    float: left;
+    top: 3px;
+}
+
+.ccuinfo-btn-container .add-event-icon {
+    display: inline-block;
+    position: relative;
+    height: 17px;
+    width: 25px;
+    float: left;
+    top: 4px;
+    margin-right: 10px;
+
+}
+
+.ccuinfo-btn-container {
+    padding-right: 5px;
+}
+
+.ccuinfo-btn-container:last-child {
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.registerEventBtn:hover {
+    background-color: #104881;
+}
+
+.certificate-expiracy-warning .panel-body > p {
+    margin: 0;
+}
+
+.certificate-expiracy-warning .panel-title {
+    color: #a94442;
+}
+
+/* Event history */
+
+.eventImgContainer {
+    display: table;
+    width: 40px;
+    height: 30px;
+    margin-left: 0;
+    margin-top: 10px;
+    float: left;
+}
+
+.eventTypeImg {
+    display: table-cell;
+    float: left;
+    width: auto;
+    height: inherit;
+}
+
+.eventImgContainer > .arrivingImg {
+    margin-left: -14px;
+}
+
+.elementDescription.eventTypeTitle {
+    display: inline-block;
+    padding-left: 30px;
+    padding-top: 0;
+    margin: auto;
+    float: right;
+}
+
+.event-heading > .panel-title.departingImg {
+    margin-left: 6px;
+}
+
+.panel-heading.event-heading {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.panel-group.event-history,
+.panel-group.legs {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.event-heading > .panel-title {
+    line-height: 50px;
+    text-align: left;
+    color: #58585a;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.event-heading:hover {
+    background-color: #add8e6;
+}
+
+.legs .panel-heading:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.movingImg {
+    max-width: 100px;
+    word-wrap: break-word;
+    line-height: 25px !important;
+}
+
+.legs .panel-title {
+    margin-left: 10px;
+    max-width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.panel-title.break-line {
+    line-height: 25px;
+}
+
+.event-time, .leg-time {
+    font-size: 10px;
+
+    float: right;
+    line-height: 50px;
+}
+
+.event-history > .panel {
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.event-history > .panel:last-child {
+    border-bottom: none;
+}
+
+.event-body {
+    padding: 0;
+}
+
+.readpoint > .elementValue {
+    font-size: 10px;
+}
+
+.readpoint > .elementValue > button {
+    padding: 0;
+    font-size: 14px;
+    background-image: none;
+    background-color: transparent;
+    border: 0 solid transparent;
+    color: rgb(92, 151, 191);
+}
+
+.ccuInfoTabs .event-history .panel-heading:hover,
+.ccuInfoTabs .legs .panel-heading:hover {
+    background-color: transparent;
+}
+
+.legs .event-heading {
+    cursor: context-menu;
+}
+
+.leg-eta.legEtaOnly {
+    line-height: 50px;
+    height: 50px;
+}
+
+.leg-time > div {
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+}
+
+.tabImage {
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+    float: left;
+    padding-bottom: 8px;
+}
+
+.panel-heading.activeTab {
+    background-color: rgba(56, 109, 157, 1);
+}
+
+.pointer-arrow {
+    float: right;
+    color: #ffffff;
+    height: 10px;
+    font-size: 0.9em;
+}
+
+.event-history .event-heading.activeEvent,
+.event-history .event-heading.activeEvent:hover {
+    font-weight: 600;
+}
+
+.event-history .event-heading.activeEvent .panel-title {
+    font-weight: 600;
+
+}
+

@@ -1,0 +1,18 @@
+{
+  "name": "ELHApp",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.1",
+  "homepage": "https://jade.computas.com/scm/hg/epim-elh/",
+  "license": "Computas AS",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "angular-resource": "~1.2.x",
+    "angular-animate": "~1.2.x",
+    "fastclick": "~1.0.x"
+  }
+}

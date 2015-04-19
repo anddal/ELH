@@ -1,0 +1,31 @@
+<div class="container ccuSearchContent">
+
+    <form novalidate class="simple-form" name="searchCcuForm">
+        <div class="panel panel-info">
+            <div class="panel-heading ">
+                <h4 class="panel-title">Ccu Id</h4>
+            </div>
+            <div class="panel-body">
+                <input type="text" class="form-control" placeholder="Enter Ccu Id" ng-model="ccu.ccuId"
+                       ng-enter="searchLocalFirst()" ng-required="true">
+            </div>
+        </div>
+        <button class="btn submitBtn btn-lg btn-block searchBtn" ng-click="searchLocalFirst()" ng-disabled="searchCcuForm.$invalid">
+            Search
+        </button>
+        <button class="btn btn-lg btn-block cancel-btn" ng-click="reset()" ng-disabled="searchCcuForm.$invalid">
+            <span class="glyphicon glyphicon-remove"></span>
+            Clear
+        </button>
+    </form>
+    <!-- HINTS FOR TESTING
+    <span class="label label-success"><a style="color: #ffffff" href="#/ccu/141705"> Try: 141705</a></span>
+    <span class="label label-success"><a style="color: #ffffff" href="#/ccu/365891"> Try: 365891</a></span>
+    <span class="label label-success"><a style="color: #ffffff" href="#/ccu/763851"> Try: 763851</a></span>
+    <!-- TESTING END -->
+
+    <div class="alert alert-warning" ng-show="expandme">
+        <h5>{{errorstatus}}: {{errormessage}} - Please try again.</h5>
+    </div>
+</div>
+

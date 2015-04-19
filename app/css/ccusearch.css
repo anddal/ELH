@@ -1,0 +1,50 @@
+.ccuSearchContent {
+    margin-top: 70px;
+}
+
+.ccuSearchContent .alert.alert-warning {
+    margin-top: 10px;
+}
+
+.container .submitBtn {
+    color: #fcfcfc;
+}
+
+.submitBtn {
+    margin-bottom: 20px;
+    background-color: rgba(92, 151, 191, 1);
+    border: 1px solid rgb(56, 109, 157);
+    color: #ffffff;
+}
+
+.submitBtn:active {
+    background-color: rgba(56, 109, 157, 1);
+}
+
+.panel-info > .panel-heading {
+    background-color: rgba(92, 151, 191, 1);
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.submitBtn:hover {
+    color: #ffffff;
+}
+
+.infoBlue {
+    background-color: #b3d4fc;
+    color: #000000;
+}
+
+.clearBtn {
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: rgba(135, 195, 235, .7);
+
+}
+
+.clearBtn:hover {
+    background-color: rgba(135, 195, 235, 1);
+    color: rgb(88, 88, 90);
+}

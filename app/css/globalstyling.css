@@ -1,0 +1,73 @@
+body {
+    overflow-x: hidden;
+}
+
+.ccu-info-btns, .panel-heading {
+    padding: 10px 10px !important;
+}
+
+#content-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#content-canvas.show-nav, .show-nav.fixed-header, .show-nav.sidemenu {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+    position: fixed;
+}
+
+.sidemenu, #content-canvas, .fixed-header {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+
+    -webkit-transition: 400ms ease-out all;
+    transition: 400ms ease-out all;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.panel-group .panel,
+.panel-heading,
+.panel,
+.registerEventBtn, .btn,
+.modal-content,
+.form-control {
+    border-radius: 0;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: none;
+
+}
+
+@media (max-width: 999px) {
+    .ccu-info-btns:hover,
+    .submitBtn:hover,
+    .ccuInfoTabs .panel-heading:not(.activeTab):hover {
+        background-color: rgba(92, 151, 191, 1);
+    }
+}
+
+@media (min-width: 1000px) {
+    .ccu-info-btns:hover,
+    .submitBtn:hover,
+    .ccuInfoTabs .panel-heading:hover {
+        background-color: rgba(56, 109, 157, 1);
+    }
+}
